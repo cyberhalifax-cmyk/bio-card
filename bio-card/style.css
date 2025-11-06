@@ -1,0 +1,107 @@
+:root{
+  --bg:#0b0f14;
+  --panel:#0f1720;
+  --muted:#9aa5b1;
+  --accent:#00a3ff; /* cyber blue */
+  --glass: rgba(255,255,255,0.04);
+  --radius:14px;
+  --transition: all .28s cubic-bezier(.22,.9,.29,1);
+  --maxw:1100px;
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#06080a 0%, #0b0f14 100%);
+  color:#e6eef6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* container */
+.container{max-width:var(--maxw);margin:0 auto;padding:28px;}
+
+/* header */
+.site-header{
+  backdrop-filter: blur(6px);
+  position:sticky;top:0;z-index:60;
+  background:linear-gradient(180deg,rgba(6,8,10,0.6), rgba(6,8,10,0.35));
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;}
+.brand h1{margin:0;font-size:1.05rem;letter-spacing:0.6px}
+.tagline{margin:3px 0 0;font-size:.78rem;color:var(--muted)}
+.nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+.nav a:hover{color:var(--accent);transform:translateY(-2px);transition:var(--transition)}
+
+/* hero */
+.hero{display:flex;gap:32px;align-items:center;padding:48px 0}
+.hero-left{flex:1;max-width:640px}
+.hero-right{width:220px;display:flex;align-items:center;justify-content:center}
+.hero-right img{
+  width:180px;height:180px;border-radius:999px;object-fit:cover;border:4px solid rgba(255,255,255,0.04);
+  box-shadow:0 8px 30px rgba(0,0,0,0.6);transition:transform .6s cubic-bezier(.22,.9,.29,1);
+}
+.hero-right img:hover{transform:rotate(-6deg) scale(1.02)}
+h2{font-size:2.1rem;margin:0 0 12px}
+.accent{color:var(--accent)}
+.lead{color:var(--muted);font-size:1.05rem;margin:0 0 18px}
+
+/* buttons */
+.btn{display:inline-block;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+.btn.primary{background:linear-gradient(135deg,var(--accent),#38c8ff);color:#03101a;box-shadow:0 8px 30px rgba(0,163,255,0.12)}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+.btn:hover{transform:translateY(-4px);transition:var(--transition)}
+
+/* quick skills */
+.quick-skills{display:flex;gap:10px;list-style:none;padding:0;margin:20px 0 0}
+.quick-skills li{background:var(--glass);padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:600}
+
+/* about */
+.about{padding:40px 0}
+.about h3{margin:0 0 12px}
+.skills-grid{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+.skill{background:rgba(255,255,255,0.03);padding:10px 14px;border-radius:12px;color:var(--muted);font-weight:700}
+
+/* projects */
+.projects{padding:40px 0}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.project-card{background:linear-gradient(180deg,rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);transition:var(--transition)}
+.project-card:hover{transform:translateY(-8px);box-shadow:0 15px 40px rgba(0,0,0,0.6)}
+.project-card h4{margin:0 0 8px}
+.proj-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.proj-tags span{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-size:.85rem}
+
+/* contact */
+.contact{padding:40px 0}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.contact-card{background:rgba(255,255,255,0.02);padding:14px;border-radius:12px}
+.contact-card a{color:var(--accent);text-decoration:none}
+
+/* footer */
+.site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:18px 0;margin-top:20px;text-align:center;color:var(--muted)}
+
+/* responsive */
+@media (max-width:900px){
+  .hero{flex-direction:column-reverse;gap:18px;padding:28px 0}
+  .hero-right{width:160px}
+  .hero-right img{width:140px;height:140px}
+  .header-inner{flex-direction:column;align-items:flex-start;gap:12px}
+}
+
+.contact-btn {
+  background-color: #0077ff; /* cyber blue */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #005fcb;
+}
